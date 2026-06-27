@@ -18,7 +18,7 @@
 
 ## Key Decisions (2026-03-30)
 
-1. **AI Model**: GLM series (ZhipuAI) — replaces GPT-4o entirely
+1. **AI Model**: Volcengine Ark CodingPlan / Doubao — replaces GPT-4o entirely
 2. **Multiplayer**: Deferred — single-player VR experience first
 3. **Sprint Planning**: Managed within this project via /sprint-plan
 4. **Testing Strategy**: Full test suite after feature development
@@ -43,8 +43,8 @@
 
 | Priority | Task | Status |
 |----------|------|--------|
-| P0 | GLM model integration (replace GPT-4o) | Pending |
+| P0 | Ark model integration (replace GPT-4o) | Pending |
 | P1 | Map systems + create systems index | Pending |
-| P2 | Sprint plan for GLM integration | Pending |
+| P2 | Sprint plan for Ark integration | Pending |
 | P3 | Test coverage for AI service layer | Pending |
 | P4 | Multiplayer VR sessions | Deferred |
