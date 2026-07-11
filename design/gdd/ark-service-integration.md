@@ -7,7 +7,7 @@
 
 ## Overview
 
-Ark Service Integration 是 TripMeta 的大语言模型接入层，负责将火山方舟 Ark CodingPlan 的 OpenAI-compatible chat completion 接入到现有的 AI 服务架构中，替代旧的 OpenAI/第三方直连实现。该系统实现 `IGPTService` 接口，为 AI 导游和 NPC 对话提供多轮对话、流式响应、内容生成能力。用户不直接感知该系统——他们感知到的是导游能"说话"了，NPC 能"回应"了。没有该系统，所有 AI 功能处于 Mock 状态，无法产生真实对话。
+Ark Service Integration 是 TripMeta 的大语言模型接入层，负责将火山方舟 Ark Agent Plan 的 OpenAI-compatible chat completion 接入到现有的 AI 服务架构中，替代旧的 OpenAI/第三方直连实现。该系统实现 `IGPTService` 接口，为 AI 导游和 NPC 对话提供多轮对话、流式响应、内容生成能力。用户不直接感知该系统——他们感知到的是导游能"说话"了，NPC 能"回应"了。没有该系统，所有 AI 功能处于 Mock 状态，无法产生真实对话。
 
 ## Player Fantasy
 
@@ -18,10 +18,10 @@ Ark Service Integration 是 TripMeta 的大语言模型接入层，负责将火�
 ### Core Rules
 
 1. ArkService 实现 `IGPTService` 接口，作为 GPTService 的替代
-2. API 端点：`https://ark.cn-beijing.volces.com/api/coding/v3/chat/completions`
+2. API 端点：`https://ark.cn-beijing.volces.com/api/plan/v3/chat/completions`
 3. 认证方式：Bearer Token（API Key 从配置读取，不硬编码）
 4. 默认模型：`doubao-seed-2-0-code-preview-260215`
-5. 生产模型：通过 `ARK_CHAT_MODEL` 配置，默认沿用 CodingPlan 模型
+5. 生产模型：通过 `ARK_CHAT_MODEL` 配置，默认沿用 Agent Plan 模型
 6. 请求格式与 OpenAI 兼容：`{ model, messages[], temperature, max_tokens, stream }`
 7. 非流式响应解析：`response.choices[0].message.content`
 8. 流式响应解析：SSE 格式，`data: {json}\n\n`，`delta.content` 逐 chunk 拼接
@@ -112,7 +112,7 @@ requestTimeout = baseTimeout + (estimatedTokens / tokensPerSecond)
 
 | Parameter | Default | Safe Range | Effect of Increase | Effect of Decrease |
 |-----------|---------|------------|-------------------|-------------------|
-| model | doubao-seed-2-0-code-preview-260215 | 见 Ark 控制台/CodingPlan 模型列表 | 更强能力，更高成本 | 更快更便宜，能力下降 |
+| model | doubao-seed-2-0-code-preview-260215 | 见 Ark 控制台/Agent Plan 模型列表 | 更强能力，更高成本 | 更快更便宜，能力下降 |
 | temperature | 0.7 | 0.0-1.5 | 更有创意/随机 | 更确定/可预测 |
 | maxTokens | 2048 | 64-16384 | 更长回复，更慢 | 更短更快 |
 | maxRequestsPerMinute | 30 | 1-120 | 更高吞吐 | 更低成本 |

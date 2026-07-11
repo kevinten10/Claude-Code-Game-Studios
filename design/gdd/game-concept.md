@@ -23,7 +23,7 @@ AI 驱动的 VR 元宇宙旅游社区——戴上头显，AI 导游带你沉浸�
 
 - **Engine**: Unity 2021.3.11f1 (LTS) + URP 17.0.3
 - **Platform**: PICO 4 VR (Android)
-- **AI Model**: Volcengine Ark CodingPlan / Doubao
+- **AI Model**: Volcengine Ark Agent Plan / Doubao
 - **Speech**: TBD (replacing Azure)
 - **Networking**: Netcode for GameObjects 2.1.1 (deferred)
 

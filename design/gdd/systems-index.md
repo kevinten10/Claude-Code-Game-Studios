@@ -147,7 +147,7 @@ Effort: S = 1 session, M = 2-3 sessions, L = 4+ sessions.
 
 | System | Risk Type | Risk Description | Mitigation |
 |--------|-----------|-----------------|------------|
-| [16] Ark Service Integration | Technical | Ark OpenAI-compatible 接口的流式响应兼容性 | 先调研 Ark CodingPlan 文档，建 adapter 层 |
+| [16] Ark Service Integration | Technical | Ark OpenAI-compatible 接口的流式响应兼容性 | 先调研 Ark Agent Plan 文档，建 adapter 层 |
 | [17] Speech Service | Technical | 国产语音服务选型未定，延迟/质量不确定 | 保留接口抽象，支持多后端切换 |
 | [18] Scene/World Management | Scope | 景点数量和复杂度可能膨胀 | 先支持 2-3 个景点，验证流程 |
 
@@ -171,7 +171,7 @@ Effort: S = 1 session, M = 2-3 sessions, L = 4+ sessions.
 
 - [ ] Design [16] Ark Service Integration — `/design-system Ark Service Integration`
 - [ ] Plan Sprint 1 around P0 + P1 systems — `/sprint-plan new`
-- [ ] Research Ark CodingPlan API documentation before design
+- [ ] Research Ark Agent Plan API documentation before design
 - [ ] Design [4] AI Tour Guide adaptation after Ark design
 - [ ] Design [5] AI NPC System adaptation after Ark design
 - [ ] Run `/gate-check` when P0-P1 systems are designed and implemented
